@@ -64,11 +64,25 @@ if os.path.isdir('train/fire') is False:
 
 plt.figure(figsize=(12,12))
 path_train = path + r"\train\fire"
-for i in range (1,17):
-    plt.subplot(4,4,i)
+for i in range (1, 17):
+    plt.subplot(4, 4, i)
     plt.tight_layout()
-    rand_img = imread(path + '/' + random.choice(sorted(os.listdir(path))), format='jpg')
+    rand_img = imread(path_train + '/' + random.choice(sorted(os.listdir(path_train))), format='jpg')
     plt.imshow(rand_img)
     plt.xlabel(rand_img.shape[1], fontsize = 10)
     plt.ylabel(rand_img.shape[0], fontsize = 10)
     plt.savefig(path_project + r"\reports\figures\sample_fire.png")
+
+# Plotting random 16 original images (non-fire)
+
+plt.figure(figsize=(12,12))
+path_train = path + r"\train\non_fire"
+for i in range (1, 17):
+    plt.subplot(4, 4, i)
+    plt.tight_layout()
+    rand_img = imread(path_train + '/' + random.choice(sorted(os.listdir(path_train))), format='jpg')
+    plt.imshow(rand_img)
+    plt.xlabel(rand_img.shape[1], fontsize = 10)
+    plt.ylabel(rand_img.shape[0], fontsize = 10)
+    plt.savefig(path_project + r"\reports\figures\sample_non_fire.png")
+
