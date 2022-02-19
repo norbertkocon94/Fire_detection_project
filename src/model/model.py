@@ -53,7 +53,7 @@ print(model.summary())
 
 # Model run
 
-model.fit(train_batches, validation_data=valid_batches, epochs=10, verbose=1)
+model.fit(train_batches, validation_data=valid_batches, epochs=20, verbose=1)
 
 # Result
 
@@ -77,3 +77,7 @@ plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
 plt.savefig(path_project + r"\reports\figures\Loss_Accuracy.png")
+
+# Save model
+
+model.save(r"C:\Users\NorbertK\PycharmProjects\Fire_detection_project\src\model\model.h5")
